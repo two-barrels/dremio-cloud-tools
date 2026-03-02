@@ -235,6 +235,7 @@ spec:
   {{- include "dremio.coordinator.log.volumeClaimTemplate" $ | nindent 2 }}
   - metadata:
       name: dremio-master-volume
+      {{- include "dremio.coordinator.volumeClaimAnnotations" $ | nindent 6}}
     spec:
       accessModes: ["ReadWriteOnce"]
       {{- include "dremio.coordinator.storageClass" $ | nindent 6 }}
